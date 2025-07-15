@@ -1,4 +1,3 @@
-import React from 'react';
 import { ReactNode, useCallback, useMemo } from 'react';
 import { ConvexProviderWithAuth } from 'convex/react';
 
