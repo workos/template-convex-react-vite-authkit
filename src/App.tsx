@@ -1,13 +1,8 @@
-"use client";
+'use client';
 
-import {
-  Authenticated,
-  Unauthenticated,
-  useMutation,
-  useQuery,
-} from "convex/react";
-import { api } from "../convex/_generated/api";
-import { useAuth } from "@workos-inc/authkit-react";
+import { Authenticated, Unauthenticated, useMutation, useQuery } from 'convex/react';
+import { api } from '../convex/_generated/api';
+import { useAuth } from '@workos-inc/authkit-react';
 
 export default function App() {
   return (
@@ -17,9 +12,7 @@ export default function App() {
         <UserButton />
       </header>
       <main className="p-8 flex flex-col gap-16">
-        <h1 className="text-4xl font-bold text-center">
-          Convex + React + WorkOS AuthKit
-        </h1>
+        <h1 className="text-4xl font-bold text-center">Convex + React + WorkOS AuthKit</h1>
         <Authenticated>
           <Content />
         </Authenticated>
@@ -41,13 +34,13 @@ function SignInForm() {
   return (
     <div className="flex flex-col gap-8 w-96 mx-auto">
       <p>Log in to see the numbers</p>
-      <button 
+      <button
         onClick={handleSignIn}
         className="bg-dark dark:bg-light text-light dark:text-dark text-sm px-4 py-2 rounded-md border-2"
       >
         Sign in
       </button>
-      <button 
+      <button
         onClick={handleSignIn}
         className="bg-dark dark:bg-light text-light dark:text-dark text-sm px-4 py-2 rounded-md border-2"
       >
@@ -89,10 +82,10 @@ function Content() {
 
   return (
     <div className="flex flex-col gap-8 max-w-lg mx-auto">
-      <p>Welcome {viewer ?? "Anonymous"}!</p>
+      <p>Welcome {viewer ?? 'Anonymous'}!</p>
       <p>
-        Click the button below and open this page in another window - this data
-        is persisted in the Convex cloud database!
+        Click the button below and open this page in another window - this data is persisted in the Convex cloud
+        database!
       </p>
       <p>
         <button
@@ -104,24 +97,19 @@ function Content() {
           Add a random number
         </button>
       </p>
+      <p>Numbers: {numbers?.length === 0 ? 'Click the button!' : (numbers?.join(', ') ?? '...')}</p>
       <p>
-        Numbers:{" "}
-        {numbers?.length === 0
-          ? "Click the button!"
-          : numbers?.join(", ") ?? "..."}
-      </p>
-      <p>
-        Edit{" "}
+        Edit{' '}
         <code className="text-sm font-bold font-mono bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded-md">
           convex/myFunctions.ts
-        </code>{" "}
+        </code>{' '}
         to change your backend
       </p>
       <p>
-        Edit{" "}
+        Edit{' '}
         <code className="text-sm font-bold font-mono bg-slate-200 dark:bg-slate-800 px-1 py-0.5 rounded-md">
           src/App.tsx
-        </code>{" "}
+        </code>{' '}
         to change your frontend
       </p>
       <div className="flex flex-col">
@@ -159,15 +147,7 @@ function Content() {
   );
 }
 
-function ResourceCard({
-  title,
-  description,
-  href,
-}: {
-  title: string;
-  description: string;
-  href: string;
-}) {
+function ResourceCard({ title, description, href }: { title: string; description: string; href: string }) {
   return (
     <div className="flex flex-col gap-2 bg-slate-200 dark:bg-slate-800 p-4 rounded-md h-28 overflow-auto">
       <a href={href} className="text-sm underline hover:no-underline">

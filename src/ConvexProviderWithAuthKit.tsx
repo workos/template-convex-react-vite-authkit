@@ -1,6 +1,6 @@
-import React from "react";
-import { ReactNode, useCallback, useMemo } from "react";
-import { ConvexProviderWithAuth } from "convex/react";
+import React from 'react';
+import { ReactNode, useCallback, useMemo } from 'react';
+import { ConvexProviderWithAuth } from 'convex/react';
 
 type IConvexReactClient = {
   setAuth(fetchToken: () => Promise<string | null>): void;
@@ -51,7 +51,7 @@ function useUseAuthFromAuthKit(useAuth: UseAuth) {
             const token = await getAccessToken();
             return token;
           } catch (error) {
-            console.error("Error fetching WorkOS access token:", error);
+            console.error('Error fetching WorkOS access token:', error);
             return null;
           }
         }, [getAccessToken]);
