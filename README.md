@@ -28,9 +28,11 @@ npm create convex@latest -- -t react-vite-workos-authkit
 Then:
 
 1. Sign up for [WorkOS](https://workos.com/) and create an application
-2. Configure your WorkOS environment variables in `.env.local` (see `.env.local.example`)
-3. Set up the JWT issuer domain as `WORKOS_JWT_ISSUER_DOMAIN` in your Convex dashboard environment variables
-4. Configure your WorkOS client ID as `WORKOS_CLIENT_ID` in your Convex dashboard environment variables
+2. Copy `.env.local.example` to `.env.local` and configure:
+   - `VITE_WORKOS_CLIENT_ID`: Your WorkOS client ID
+   - `VITE_WORKOS_REDIRECT_URI`: Your redirect URI (default: http://localhost:5173/callback)
+   - `VITE_CONVEX_URL`: Your Convex deployment URL
+3. Configure your WorkOS client ID as `WORKOS_CLIENT_ID` in your Convex dashboard environment variables
 
 For user management and webhook integration with WorkOS, check out the [WorkOS documentation](https://workos.com/docs/user-management).
 
